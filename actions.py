@@ -104,9 +104,8 @@ class ActionSetPhone(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(text="befor")
+
         phone = tracker.get_slot("phone")
-        dispatcher.utter_message(text=phone)
         phoneRegex = re.search('^(009665|9665|05|5|\+966)([593076418])([0-9]{7})$', str(phone))
         if phoneRegex is None:
             phone = None
