@@ -1,0 +1,52 @@
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+pipeline: "supervised_embeddings"
+#pipeline:
+#  - name: WhitespaceTokenizer
+#  - name: RegexFeaturizer
+#  - name: CRFEntityExtractor    #if you use supervised_embeddings
+#  - name: EntitySynonymMapper   #if you use supervised_embeddings
+#  - name: LexicalSyntacticFeaturizer
+#  - name: CountVectorsFeaturizer
+#  - name: CountVectorsFeaturizer
+#    analyzer: "char_wb"
+#    min_ngram: 1
+#    max_ngram: 4
+#  - name: DIETClassifier
+#    epochs: 100
+#  - name=EmbeddingIntentClassifier     #same the DIETClassifier just in the old version
+#  - name: EntitySynonymMapper
+#  - name: ResponseSelector
+#    epochs: 100
+
+#language: ar
+#pipeline: "supervised_embeddings"
+
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  - name: MemoizationPolicy
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 100
+  - name: MappingPolicy
+#  - name: FormPolicy  # use to collect information befor the action
+#  - name: FallbackPolicy or TwoStageFallbackPolicy # use for outside domain of chatbot
+#     nlu_threshold: 0.3                                       #  FallbackPolicy &  TwoStageFallbackPolicy
+#     ambiguity_threshold: 0.1                                 #  FallbackPolicy &  TwoStageFallbackPolicy
+#     core_threshold: 0.3                                      #  FallbackPolicy &  TwoStageFallbackPolicy
+#     fallback_action_name: 'action_default_fallback           #  FallbackPolicy
+#     fallback_core_action_name: 'action_default_fallback'     # TwoStageFallbackPolicy
+#     fallback_nlu_action_name: 'action_default_fallback'      # TwoStageFallbackPolicy
+#     deny_suggestion_intent_name: "out_of_scope"              # TwoStageFallbackPolicy
+#  - name: AugmentedMemoizationPolicy or MemoizationPolicy
+#  - name: EmbeddingPolicy(TEDPolicy)
+#  - name: KerasPolicy
+#     max_history: 3        #number of conversational
+#     epochs: 200           #number of time training
+#     validation_split: 0.1 # 10% from data to validation
+#     random_seed: 1        # random number for start
+#  - name: SklearnPolicy
+
+

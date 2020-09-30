@@ -1,0 +1,263 @@
+## university_Site path
+* greet
+  - utter_greet
+* how_are_you
+  - utter_how_are_you
+* bot_challenge
+  - utter_bot_challenge
+* ask_for_help
+  - utter_ask_for_help
+* university_accounts
+  - utter_university_accounts
+  - action_site
+* thanks
+  - utter_thanks 
+* goodbye
+  - utter_name
+* name
+  - action_set_name
+  - utter_your_email
+* your_email
+  - action_set_email
+  - utter_your_phone
+* your_phone
+  - action_set_phone
+  - utter_goodbye
+  - action_get_information
+  
+## university_Site_Ar path
+* greet_Ar
+ - utter_greet_Ar
+* how_are_you_Ar
+  - utter_how_are_you_Ar
+* bot_challenge_Ar
+  - utter_bot_challenge_Ar
+* ask_for_help_Ar
+  - utter_ask_for_help_Ar
+* university_accounts_Ar
+  - utter_university_accounts_Ar
+  - action_site
+* thanks_Ar
+  - utter_thanks_Ar
+* goodbye_Ar
+ - utter_name_Ar
+* name_Ar
+ -action_set_name
+ - utter_your_email_Ar
+* your_email_Ar
+ - action_set_email
+ - utter_your_phone_Ar
+* your_phone_Ar
+ - action_set_phone
+ - utter_goodbye_Ar
+ - action_get_information
+
+## problem_Technical path
+* greet
+  - utter_greet
+* how_are_you
+  - utter_how_are_you
+* bot_challenge
+  - utter_bot_challenge
+* ask_for_help
+  - utter_ask_for_help
+* my_problems_technical
+  - action_set_problem
+  - utter_my_problems_technical
+* thanks
+  - utter_thanks 
+* goodbye
+  - utter_name
+* name
+  - action_set_name
+  - utter_your_email
+* your_email
+  - action_set_email
+  - utter_your_phone
+* your_phone
+  - action_set_phone
+  - utter_goodbye
+  - action_get_information
+  
+## problem_Technical_Ar path
+* greet_Ar
+ - utter_greet_Ar
+* how_are_you_Ar
+  - utter_how_are_you_Ar
+* bot_challenge_Ar
+  - utter_bot_challenge_Ar
+* ask_for_help_Ar
+  - utter_ask_for_help_Ar
+* my_problems_technical_Ar
+  - action_set_problem
+  - utter_my_problems_technical_Ar
+* thanks_Ar
+  - utter_thanks_Ar
+* goodbye_Ar
+ - utter_name_Ar
+* name_Ar
+ - action_set_name
+ - utter_your_email_Ar
+* your_email_Ar
+ - action_set_email
+ - utter_your_phone_Ar
+* your_phone_Ar
+ - action_set_phone
+ - utter_goodbye_Ar
+ - action_get_information
+
+## problem_Blackboard path
+* greet
+  - utter_greet
+* how_are_you
+  - utter_how_are_you
+* bot_challenge
+  - utter_bot_challenge
+* ask_for_help
+  - utter_ask_for_help
+* my_problems_blackboard
+  - utter_my_problems_blackboard
+* thanks
+  - utter_thanks 
+* goodbye
+  - utter_name
+* name
+  - action_set_name
+  - utter_your_email
+* your_email
+  - action_set_email
+  - utter_your_phone
+* your_phone
+  - action_set_phone
+  - utter_goodbye
+  - action_get_information
+  
+## problem_Blackboard_Ar path
+* greet_Ar
+ - utter_greet_Ar
+* how_are_you_Ar
+  - utter_how_are_you_Ar
+* bot_challenge_Ar
+  - utter_bot_challenge_Ar
+* ask_for_help_Ar
+  - utter_ask_for_help_Ar
+* my_problems_blackboard_Ar
+  - utter_my_problems_blackboard_Ar
+* thanks_Ar
+  - utter_thanks_Ar
+* goodbye_Ar
+ - utter_name_Ar
+* name_Ar
+ - action_set_name
+ - utter_your_email_Ar
+* your_email_Ar
+ - action_set_email
+ - utter_your_phone_Ar
+* your_phone_Ar
+ - action_set_phone
+ - utter_goodbye_Ar
+ - action_get_information
+
+## problem_ITdl path
+* greet
+  - utter_greet
+* how_are_you
+  - utter_how_are_you
+* bot_challenge
+  - utter_bot_challenge
+* ask_for_help
+  - utter_ask_for_help
+* itdl_information
+  - utter_itdl_information
+* thanks
+  - utter_thanks 
+* goodbye
+  - utter_name
+* name
+  - action_set_name
+  - utter_your_email
+* your_email
+  - action_set_email
+  - utter_your_phone
+* your_phone
+  - action_set_phone
+  - utter_goodbye
+  - action_get_information
+  
+## problem_ITdl_Ar path
+* greet_Ar
+ - utter_greet_Ar
+* how_are_you_Ar
+  - utter_how_are_you_Ar
+* bot_challenge_Ar
+  - utter_bot_challenge_Ar
+* ask_for_help_Ar
+  - utter_ask_for_help_Ar
+* itdl_information_Ar
+  - utter_itdl_information_Ar
+* thanks_Ar
+  - utter_thanks_Ar
+* goodbye_Ar
+ - utter_name_Ar
+* name_Ar
+ - action_set_name
+ - utter_your_email_Ar
+* your_email_Ar
+ - action_set_email
+ - utter_your_phone_Ar
+* your_phone_Ar
+ - action_set_phone
+ - utter_goodbye_Ar
+ - action_get_information
+ 
+ ## job path
+* greet
+  - utter_greet
+* how_are_you
+  - utter_how_are_you
+* bot_challenge
+  - utter_bot_challenge
+* ask_for_help
+  - utter_ask_for_help
+* jobs_information
+  - utter_jobs_information
+* thanks
+  - utter_thanks 
+* goodbye
+  - utter_name
+* name
+  - action_set_name
+  - utter_your_email
+* your_email
+  - action_set_email
+  - utter_your_phone
+* your_phone
+  - action_set_phone
+  - utter_goodbye
+  - action_get_information
+  
+## job_Ar path
+* greet_Ar
+ - utter_greet_Ar
+* how_are_you_Ar
+  - utter_how_are_you_Ar
+* bot_challenge_Ar
+  - utter_bot_challenge_Ar
+* ask_for_help_Ar
+  - utter_ask_for_help_Ar
+* jobs_information_Ar
+  - utter_jobs_information_Ar
+* thanks_Ar
+  - utter_thanks_Ar
+* goodbye_Ar
+ - utter_name_Ar
+* name_Ar
+ - action_set_name
+ - utter_your_email_Ar
+* your_email_Ar
+ - action_set_email
+ - utter_your_phone_Ar
+* your_phone_Ar
+ - action_set_phone
+ - utter_goodbye_Ar
+ - action_get_information
