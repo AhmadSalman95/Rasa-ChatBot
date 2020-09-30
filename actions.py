@@ -11,6 +11,8 @@ from typing import Any, Text, Dict, List
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
+import re
+from rasa_sdk.events import SlotSet
 
 
 # from langdetect import detect
@@ -62,9 +64,6 @@ class ActionSite(Action):
         return []
 
 
-
-
-
 class ActionSetName(Action):
     def name(self) -> Text:
         return "action_set_name"
@@ -72,8 +71,7 @@ class ActionSetName(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
-        name=tracker.get_slot("name")
+        name = tracker.get_slot("name")
         dispatcher.utter_message(text=("we save your name :{}".format(name)))
         return []
 
@@ -85,11 +83,18 @@ class ActionSetEmail(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-
         email = tracker.get_slot("email")
-        dispatcher.utter_message(text="we save your email {}".format(email))
+        emailRegex = re.search('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$', email)
 
-        return []
+        if emailRegex is None:
+            email = None
+            dispatcher.utter_message(text="try again !!")
+
+        else:
+            email = emailRegex.string
+            dispatcher.utter_message(text="we save your email {}".format(email))
+
+        return [SlotSet("email", email)]
 
 
 class ActionSetPhone(Action):
@@ -99,10 +104,17 @@ class ActionSetPhone(Action):
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(text="befor")
         phone = tracker.get_slot("phone")
-        dispatcher.utter_message(text="we save your phone {}".format(phone))
-
-        return []
+        dispatcher.utter_message(text=phone)
+        phoneRegex = re.search('^(009665|9665|05|5|\+966)([593076418])([0-9]{7})$', str(phone))
+        if phoneRegex is None:
+            phone = None
+            dispatcher.utter_message(text="try again !!")
+        else:
+            phone = phoneRegex.string
+            dispatcher.utter_message(text="we save your phone {}".format(phone))
+        return [SlotSet("phone", phone)]
 
 
 class ActionSetProblem(Action):
@@ -131,7 +143,8 @@ class ActionGetInformation(Action):
         problem = tracker.get_slot("problem")
 
         dispatcher.utter_message(
-            text="the your information is : name {0},phone {1},email {2} ,problem {3}".format(name, phone, email, problem))
+            text="the your information is : name {0},phone {1},email {2} ,problem {3}".format(name, phone, email,
+                                                                                              problem))
         return []
 
 # class to get the variable from the user

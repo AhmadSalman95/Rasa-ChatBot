@@ -174,7 +174,7 @@ responses:
   - text: "whats your name"
 
   utter_name_Ar:
-  - text: "ماهو اسمك"
+  - text: "الرجاء كتابة اسمك الثلاثي"
 
   utter_your_email:
   - text: "please tell me what's your email"
