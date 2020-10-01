@@ -19,9 +19,36 @@ pipeline: "supervised_embeddings"
 #  - name: EntitySynonymMapper
 #  - name: ResponseSelector
 #    epochs: 100
+##############################################################################################
+# arabic rasa
 
 #language: ar
-#pipeline: "supervised_embeddings"
+#pipeline: tensorflow_embedding
+#pipeline:
+  #- name: tokenizer_whitespace
+#  - name: WhitespaceTokenizer
+#    intent_tokenization_flag: true
+#    intent_split_symbol: "_"
+#  - name: ner_crf
+  #- name: intent_featurizer_count_vectors
+#  - name: CountVectorsFeaturizer
+#  - name: intent_classifier_tensorflow_embedding
+#    intent_tokenization_flag: true
+#    intent_split_symbol: "_"
+#  - name: tensorflow_embedding
+
+
+########################################################################################################
+
+
+
+
+
+
+
+
+
+
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
