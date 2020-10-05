@@ -211,7 +211,7 @@
 - [in the blackboard, the courses are not found](Bbproblem)
 - [my subjects are not found](Bbproblem)
 - [my courses are not found](Bbproblem)
-- [how can update my courses ?](Bbproblem)
+- [how can update my courses](Bbproblem)
 - [update courses in blackboard](Bbproblem)
 - [update subjects in blackboard](Bbproblem)
 
@@ -268,15 +268,15 @@
 ## intent:name_Ar
 - اسمي هو [احمد وفا لطفي](name)
 - معك [خالد موشير علي](name)
-- [محمد يوسف القحطاني ](name)
+- [محمد يوسف القحطاني](name)
 - [امجد نور الدوسري](name)
 - [فواز تامر العنزي](name)
 - انا [ايهاب طه الشمري](name)
 - اسمي [خلود ادريس الغامدي](name)
-- [ريم فضل الزهراني ](name)
-- [اسماء جابر العصيمي ](name)
-- [زينب طلال الزايدي ](name)
-- [فاطمة زياد الحربي ](name)
+- [ريم فضل الزهراني](name)
+- [اسماء جابر العصيمي](name)
+- [زينب طلال الزايدي](name)
+- [فاطمة زياد الحربي](name)
 
 ## intent:your_email
 - my email is [salaklsdk@gmail.com](email)

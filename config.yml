@@ -1,24 +1,26 @@
 # Configuration for Rasa NLU.
 # https://rasa.com/docs/rasa/nlu/components/
 language: "en"
-pipeline: "supervised_embeddings"
-#pipeline:
-#  - name: WhitespaceTokenizer
-#  - name: RegexFeaturizer
-#  - name: CRFEntityExtractor    #if you use supervised_embeddings
-#  - name: EntitySynonymMapper   #if you use supervised_embeddings
-#  - name: LexicalSyntacticFeaturizer
-#  - name: CountVectorsFeaturizer
-#  - name: CountVectorsFeaturizer
-#    analyzer: "char_wb"
-#    min_ngram: 1
-#    max_ngram: 4
-#  - name: DIETClassifier
-#    epochs: 100
+#pipeline: "supervised_embeddings"
+pipeline:
+  - name: WhitespaceTokenizer
+  - name: RegexFeaturizer
+  - name: CRFEntityExtractor    #if you use supervised_embeddings
+  - name: EntitySynonymMapper   #if you use supervised_embeddingsras
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: DIETClassifier
+    epochs: 100
+    batch_strategy: sequence
+    entity_recognition: False
 #  - name=EmbeddingIntentClassifier     #same the DIETClassifier just in the old version
 #  - name: EntitySynonymMapper
-#  - name: ResponseSelector
-#    epochs: 100
+  - name: ResponseSelector
+    epochs: 100
 ##############################################################################################
 # arabic rasa
 
@@ -58,8 +60,9 @@ policies:
     max_history: 5
     epochs: 100
   - name: MappingPolicy
-#  - name: FormPolicy  # use to collect information befor the action
-#  - name: FallbackPolicy or TwoStageFallbackPolicy # use for outside domain of chatbot
+  - name: FormPolicy  # use to collect information before the action
+
+#  - name: FallbackPolicy or TwoStageFallbackPolicy # use for outside domain of ChatBot
 #     nlu_threshold: 0.3                                       #  FallbackPolicy &  TwoStageFallbackPolicy
 #     ambiguity_threshold: 0.1                                 #  FallbackPolicy &  TwoStageFallbackPolicy
 #     core_threshold: 0.3                                      #  FallbackPolicy &  TwoStageFallbackPolicy

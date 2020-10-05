@@ -56,11 +56,6 @@ slots:
 
 actions:
   - action_site
-  - action_get_information
-  - action_set_name
-  - action_set_email
-  - action_set_phone
-  - action_set_problem
   - utter_greet
   - utter_greet_Ar
   - utter_goodbye
@@ -187,6 +182,9 @@ responses:
 
   utter_your_phone_Ar:
   - text: "من فضلك اكتب لي رقم تلفونك"
+
+forms:
+  - information_form
 
 session_config:
   session_expiration_time: 60
