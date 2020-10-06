@@ -61,6 +61,7 @@ policies:
     epochs: 100
   - name: MappingPolicy
   - name: FormPolicy  # use to collect information before the action
+#  - name: TwoStageFallbackPolicy
 
 #  - name: FallbackPolicy or TwoStageFallbackPolicy # use for outside domain of ChatBot
 #     nlu_threshold: 0.3                                       #  FallbackPolicy &  TwoStageFallbackPolicy

@@ -1,191 +1,166 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
-  - greet
-  - greet_Ar
-  - goodbye
-  - goodbye_Ar
-  - bot_challenge
-  - bot_challenge_Ar
-  - how_are_you
-  - how_are_you_Ar
-  - thanks
-  - thanks_Ar
-  - ask_for_help
-  - ask_for_help_Ar
-  - bot_history
-  - bot_history_Ar
-  - university_accounts
-  - university_accounts_Ar
-  - my_problems_technical
-  - my_problems_technical_Ar
-  - my_problems_blackboard
-  - my_problems_blackboard_Ar
-  - itdl_information
-  - itdl_information_Ar
-  - jobs_information
-  - jobs_information_Ar
-  - name
-  - name_Ar
-  - your_email
-  - your_email_Ar
-  - your_phone
-  - your_phone_Ar
-
+- greet
+- greet_Ar
+- goodbye
+- goodbye_Ar
+- bot_challenge
+- bot_challenge_Ar
+- how_are_you
+- how_are_you_Ar
+- thanks
+- thanks_Ar
+- ask_for_help
+- ask_for_help_Ar
+- bot_history
+- bot_history_Ar
+- university_accounts
+- university_accounts_Ar
+- my_problems_technical
+- my_problems_technical_Ar
+- my_problems_blackboard
+- my_problems_blackboard_Ar
+- itdl_information
+- itdl_information_Ar
+- jobs_information
+- jobs_information_Ar
+- name
+- name_Ar
+- your_email
+- your_email_Ar
+- your_phone
+- your_phone_Ar
 entities:
-  - site
-  - name
-  - email
-  - phone
-  - problem
-  - Bbproblem
-
-
+- site
+- name
+- email
+- phone
+- problem
+- Bbproblem
 slots:
-  site:
-    type: text
-  name:
+  Bbproblem:
     type: text
   email:
+    type: text
+  name:
     type: text
   phone:
     type: text
   problem:
     type: text
-  Bbproblem:
+  site:
     type: text
-
-
-actions:
-  - action_site
-  - utter_greet
-  - utter_greet_Ar
-  - utter_goodbye
-  - utter_goodbye_Ar
-  - utter_bot_challenge
-  - utter_bot_challenge_Ar
-  - utter_how_are_you
-  - utter_how_are_you_Ar
-  - utter_thanks
-  - utter_thanks_Ar
-  - utter_ask_for_help
-  - utter_ask_for_help_Ar
-  - utter_bot_history
-  - utter_bot_history_Ar
-  - utter_university_accounts
-  - utter_university_accounts_Ar
-  - utter_my_problems_technical
-  - utter_my_problems_technical_Ar
-  - utter_my_problems_blackboard
-  - utter_my_problems_blackboard_Ar
-  - utter_itdl_information
-  - utter_itdl_information_Ar
-  - utter_jobs_information
-  - utter_jobs_information_Ar
-  - utter_name
-  - utter_name_Ar
-  - utter_your_email
-  - utter_your_email_Ar
-  - utter_your_phone
-  - utter_your_phone_Ar
-
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
-
+  - text: Hey! How are you?
   utter_greet_Ar:
-    - text: "هلا وغلا,تفضل كيف يمكنني ان اخدمك "
-
-
+  - text: 'هلا وغلا,تفضل كيف يمكنني ان اخدمك '
   utter_goodbye:
-  - text: "goodbye,see you later"
-  - text: "goodbye"
-  - text: "I am happy to help!"
-
+  - text: goodbye,see you later
+  - text: goodbye
+  - text: I am happy to help!
   utter_goodbye_Ar:
-  - text: "مع الف سلامة"
-  - text: "الى لقاء"
-
+  - text: مع الف سلامة
+  - text: الى لقاء
   utter_bot_challenge:
-  - text: "I am Sattam,I am intelligent bot"
-
+  - text: I am Sattam,I am intelligent bot
   utter_bot_challenge_Ar:
-  - text: "انا سطام,وانا روبوت ذكي"
-
+  - text: انا سطام,وانا روبوت ذكي
   utter_how_are_you:
-  - text: "fine,and you?"
-
+  - text: fine,and you?
   utter_how_are_you_Ar:
-  - text: "الحمد لله , وانت كيف حالك ؟"
-
+  - text: الحمد لله , وانت كيف حالك ؟
   utter_thanks:
-  - text: "you are welcome"
-
+  - text: you are welcome
   utter_thanks_Ar:
-  - text: "عفوا, هذا واجبي."
-
-  utter_ask_for_help:
-  - text: "sure !"
-
-  utter_ask_for_help_Ar:
-  - text: "تفضل,اخبرني ماهي مشكلتك"
-  - text: "بالتأكيد"
-
+  - text: عفوا, هذا واجبي.
+  utter_ask_problem:
+  - text: please tell me what's yor problem
+  utter_ask_problem_Ar:
+  - text: تفضل,اخبرني ماهي مشكلتك
+  - text: بالتأكيد
   utter_bot_history:
-  - text: "Developers started my development since 2019"
-
+  - text: Developers started my development since 2019
   utter_bot_history_Ar:
-  - text: "بدا المطورون يطوروني منذ عام 2019"
-
+  - text: بدا المطورون يطوروني منذ عام 2019
   utter_university_accounts:
-  - text: "the university {site} is "
-
+  - text: 'the university {site} is '
   utter_university_accounts_Ar:
-  - text: "الجامعة {site} هو :"
-
+  - text: 'الجامعة {site} هو :'
   utter_my_problems_technical:
-  - text: "you can connect with it support by use ithelp.psau.edu.sa/n or 0115882000"
-
+  - text: you can connect with it support by use ithelp.psau.edu.sa/n or 0115882000
   utter_my_problems_technical_Ar:
-    - text: "الرجاء التواصل مع الدعم الفني عن طريق الايميل : ithelp.psau.edu.sa او عن طريق اتصال بهم على رقم 0115882000"
-
+  - text: 'الرجاء التواصل مع الدعم الفني عن طريق الايميل : ithelp.psau.edu.sa او عن
+      طريق اتصال بهم على رقم 0115882000'
   utter_my_problems_blackboard:
-  - text: "if your subjects are in the academic system and not in blackboard,you can use the updating tools in the blackboard to update the subjects"
-
+  - text: if your subjects are in the academic system and not in blackboard,you can
+      use the updating tools in the blackboard to update the subjects
   utter_my_problems_blackboard_Ar:
-  - text: "إذا كانت المقرارت موجودة في النظام الاكاديمي وغير موجودة في نظام البلاك بورد فيمكنك استخدام اداة التحديث التلقائي الموجودة في نظام البلاك بورد ."
-
+  - text: إذا كانت المقرارت موجودة في النظام الاكاديمي وغير موجودة في نظام البلاك
+      بورد فيمكنك استخدام اداة التحديث التلقائي الموجودة في نظام البلاك بورد .
   utter_itdl_information:
-  - text: "you can visit them website : https://dar.psau.edu.sa"
-
+  - text: 'you can visit them website : https://dar.psau.edu.sa'
   utter_itdl_information_Ar:
-  - text: "يمكنك زيارة موقعهم على https://dar.psau.edu.sa"
-
+  - text: يمكنك زيارة موقعهم على https://dar.psau.edu.sa
   utter_jobs_information:
-  - text: "you can visit them website : jobs.psau.edu.sa"
-
+  - text: 'you can visit them website : jobs.psau.edu.sa'
   utter_jobs_information_Ar:
-  - text: "يمكنك زيارة الموقع : jobs.psau.edu.sa"
-
-  utter_name:
-  - text: "whats your name"
-
-  utter_name_Ar:
-  - text: "الرجاء كتابة اسمك الثلاثي"
-
-  utter_your_email:
-  - text: "please tell me what's your email"
-
-  utter_your_email_Ar:
-  - text: "اكتب لي ايميلك من فضلك"
-
-  utter_your_phone:
-  - text: "please tell me what's your phone"
-
-  utter_your_phone_Ar:
-  - text: "من فضلك اكتب لي رقم تلفونك"
-
+  - text: 'يمكنك زيارة الموقع : jobs.psau.edu.sa'
+  utter_ask_name:
+  - text: whats your name
+  utter_ask_name_Ar:
+  - text: الرجاء كتابة اسمك الثلاثي
+  utter_ask_email:
+  - text: please tell me what's your email
+  utter_ask_email_Ar:
+  - text: اكتب لي ايميلك من فضلك
+  utter_ask_phone:
+  - text: please tell me what's your phone
+  utter_ask_phone_Ar:
+  - text: من فضلك اكتب لي رقم تلفونك
+actions:
+- action_site
+- utter_greet
+- utter_greet_Ar
+- utter_goodbye
+- utter_goodbye_Ar
+- utter_bot_challenge
+- utter_bot_challenge_Ar
+- utter_how_are_you
+- utter_how_are_you_Ar
+- utter_thanks
+- utter_thanks_Ar
+- utter_ask_problem
+- utter_ask_problem_Ar
+- utter_bot_history
+- utter_bot_history_Ar
+- utter_university_accounts
+- utter_university_accounts_Ar
+- utter_my_problems_technical
+- utter_my_problems_technical_Ar
+- utter_my_problems_blackboard
+- utter_my_problems_blackboard_Ar
+- utter_itdl_information
+- utter_itdl_information_Ar
+- utter_jobs_information
+- utter_jobs_information_Ar
+- utter_ask_name
+- utter_ask_name_Ar
+- utter_ask_email
+- utter_ask_email_Ar
+- utter_ask_phone
+- utter_ask_phone_Ar
 forms:
-  - information_form
+- information_form
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+template:
+- utter_ask_name
+- utter_ask_name_Ar
+- utter_ask_email
+- utter_ask_email_Ar
+- utter_ask_phone
+- utter_ask_phone_Ar
+- utter_ask_problem
+- utter_ask_problem_Ar

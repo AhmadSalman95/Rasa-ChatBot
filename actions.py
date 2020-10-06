@@ -7,18 +7,17 @@
 
 # This is a simple example for a custom action which utters "Hello World!"
 
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List, Optional
 
 from rasa_sdk import Action, Tracker, ActionExecutionRejection
 from rasa_sdk.executor import CollectingDispatcher
 import re
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.forms import FormAction, REQUESTED_SLOT
 
+from langdetect import detect
 
-# from langdetect import detect
-#
-#
+
 # class ActionHelloWorld(Action):
 #
 #     def name(self) -> Text:
@@ -33,13 +32,14 @@ from rasa_sdk.forms import FormAction, REQUESTED_SLOT
 #         return []
 
 
-# def getLanguage(text):
-# print("text "+text)
-# if ((detect(text))=="ar"):
-#     lang="AR"
-# print("detect lang "+lang)
-# return lang
-# getLanguage("السلام عليكم")
+def getLanguage(text):
+    if (detect(text)) == "ar":
+        lang = "ar"
+    else:
+        lang = "en"
+
+    return lang
+
 
 # site take the site variable and return the website or twitter account
 def getsite(text):
@@ -273,3 +273,15 @@ class InformationForm(FormAction):
                     slot_values[slot] = problem
                     dispatcher.utter_message(text=massage)
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
+
+    def request_next_slot(
+            self,
+            dispatcher: "CollectingDispatcher",
+            tracker: "Tracker",
+            domain: Dict[Text, Any],
+    ) -> Optional[List[EventType]]:
+        for slot in self.required_slots(tracker):
+            if self._should_request_slot(tracker,slot):
+                dispatcher.utter_message(template=f"utter_ask_{slot}", **tracker.slots)
+                return [SlotSet(REQUESTED_SLOT,slot)]
+        return None
