@@ -1,44 +1,10 @@
-# This files contains your custom actions which can be used to run
-# custom Python code.
-#
-# See this guide on how to implement these action:
-# https://rasa.com/docs/rasa/core/actions/#custom-actions/
-
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List, Optional
-
 from rasa_sdk import Action, Tracker, ActionExecutionRejection
 from rasa_sdk.executor import CollectingDispatcher
 import re
 from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.forms import FormAction, REQUESTED_SLOT
-
 from langdetect import detect
-
-
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []
-
-
-def getLanguage(text):
-    if (detect(text)) == "ar":
-        lang = "ar"
-    else:
-        lang = "en"
-
-    return lang
 
 
 # site take the site variable and return the website or twitter account
@@ -52,6 +18,24 @@ def getsite(text):
     return site
 
 
+# this class detect the languge(ar or en) from the first massage from the user and put in lang slot
+class ActionDetectLang(Action):
+    def name(self) -> Text:
+        return "action_detect_lang"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        massage = tracker.latest_message.get('text')
+        if (detect(massage)) == "ar":
+            lan = "ar"
+        else:
+            lan = "en"
+
+        return [SlotSet("lang", lan)]
+
+
+# this class to detect any site the customer need
 class ActionSite(Action):
     def name(self) -> Text:
         return "action_site"
@@ -109,35 +93,6 @@ class ActionSite(Action):
 #         return [SlotSet("phone", phone)]
 ###########################################################################################################
 
-
-# class to get the variable from the user
-# class ActionGets(Action):
-#     def name(self) -> Text:
-#         return "action_gets"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         name=tracker.get_slot("name")
-#         phone=tracker.get_slot("phone")
-#         email=tracker.get_slot("email")
-#         problem=tracker.get_slot("problem")
-#         dispatcher.utter_message("nice to meet you {},{},{},{}".format(name,phone,email,problem))
-#
-#         return []
-
-
-# class ActionGreet(Action):
-#     def name(self) -> Text:
-#         return "action_greet"
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#         lang = getLanguage(tracker.latest_message['text'])
-#         dispatcher.utter_message(text=lang)
-#         return []
-
-
 ############################################################################################################
 # class if you want MappingPolicy is running with add triggers in domain.yml=>intents
 # class ActionRoboHistory(Action):
@@ -149,6 +104,8 @@ class ActionSite(Action):
 ############################################################################################################
 
 # form to collect the all information
+
+# this function to check the name
 def name_test(name):
     if name is None:
         massage = "please, return enter your name!!"
@@ -157,6 +114,7 @@ def name_test(name):
     return name, massage
 
 
+# this function to check the email
 def email_test(email):
     emailRegex = re.search('^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$', email)
 
@@ -170,6 +128,7 @@ def email_test(email):
     return email, massage
 
 
+# this function to check the phone
 def phone_test(phone):
     phoneRegex = re.search('^(009665|9665|05|5|\+966)([593076418])([0-9]{7})$', str(phone))
     if phoneRegex is None:
@@ -181,6 +140,7 @@ def phone_test(phone):
     return phone, massage
 
 
+# this function to check the problem
 def problem_test(problem):
     if problem is None:
         massage = "please, return enter your problem!!"
@@ -189,6 +149,8 @@ def problem_test(problem):
     return problem, massage
 
 
+# this class to collect the information of user (name,phone,email,problem)
+# the response language detect from lang slot
 class InformationForm(FormAction):
     # return the name
     def name(self) -> Text:
@@ -199,7 +161,7 @@ class InformationForm(FormAction):
     def required_slots(tracker: "Tracker") -> List[Text]:
         return ["name", "email", "phone", "problem"]
 
-    # when find the slots
+    # where find the required slots
     def slot_mappings(self) -> Dict[Text, Any]:
         return {"name": self.from_entity(entity="name", intent=["name", "name_Ar"]),
                 "email": self.from_entity(entity="email", intent=["your_email", "your_email_Ar"]),
@@ -224,6 +186,7 @@ class InformationForm(FormAction):
 
         return []
 
+    # this function to validate the request slot
     def validate(
             self,
             dispatcher: "CollectingDispatcher",
@@ -274,14 +237,20 @@ class InformationForm(FormAction):
                     dispatcher.utter_message(text=massage)
         return [SlotSet(slot, value) for slot, value in slot_values.items()]
 
+    # this function to ask the user fill the request slot
     def request_next_slot(
             self,
             dispatcher: "CollectingDispatcher",
             tracker: "Tracker",
             domain: Dict[Text, Any],
     ) -> Optional[List[EventType]]:
+        lang = tracker.get_slot("lang")
         for slot in self.required_slots(tracker):
-            if self._should_request_slot(tracker,slot):
-                dispatcher.utter_message(template=f"utter_ask_{slot}", **tracker.slots)
-                return [SlotSet(REQUESTED_SLOT,slot)]
+            if self._should_request_slot(tracker, slot):
+                if lang == "ar":
+                    dispatcher.utter_message(template=f"utter_ask_{slot}_Ar", **tracker.slots)
+                else:
+                    dispatcher.utter_message(template=f"utter_ask_{slot}", **tracker.slots)
+
+                return [SlotSet(REQUESTED_SLOT, slot)]
         return None

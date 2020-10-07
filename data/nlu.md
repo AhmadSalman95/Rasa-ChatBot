@@ -263,7 +263,6 @@
 - [faaiz adam waleed](name)
 - my name is [fadi husni ghufran](name)
 - [labib zafar insaf](name)
-- my name is [](name)
 
 ## intent:name_Ar
 - اسمي هو [احمد وفا لطفي](name)

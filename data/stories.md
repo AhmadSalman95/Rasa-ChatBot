@@ -1,5 +1,6 @@
 ## university_Site path
 * greet
+  - action_detect_lang
   - utter_greet
 * how_are_you
   - utter_how_are_you
@@ -18,6 +19,7 @@
   
 ## university_Site_Ar path
 * greet_Ar
+ - action_detect_lang
  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar
@@ -36,6 +38,7 @@
 
 ## problem_Technical path
 * greet
+  - action_detect_lang
   - utter_greet
 * how_are_you
   - utter_how_are_you
@@ -71,6 +74,7 @@
   
 ## problem_Technical_Ar path
 * greet_Ar
+ - action_detect_lang
  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar
@@ -106,6 +110,7 @@
 
 ## problem_Blackboard path
 * greet
+  - action_detect_lang
   - utter_greet
 * how_are_you
   - utter_how_are_you
@@ -137,7 +142,8 @@
 
   
 ## problem_Blackboard_Ar path
-* greet_Ar 
+* greet_Ar
+ - action_detect_lang 
  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar
@@ -170,6 +176,7 @@
 
 ## problem_ITdl path
 * greet
+  - action_detect_lang
   - utter_greet
 * how_are_you
   - utter_how_are_you
@@ -203,6 +210,7 @@
   
 ## problem_ITdl_Ar path
 * greet_Ar
+ - action_detect_lang
  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar
@@ -235,6 +243,7 @@
  
 ## job path
 * greet
+  - action_detect_lang
   - utter_greet
 * how_are_you
   - utter_how_are_you
@@ -267,6 +276,7 @@
   
 ## job_Ar path
 * greet_Ar
+ - action_detect_lang
  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar

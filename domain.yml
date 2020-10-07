@@ -34,6 +34,7 @@ intents:
 - your_phone_Ar
 entities:
 - site
+- lang
 - name
 - email
 - phone
@@ -51,6 +52,8 @@ slots:
   problem:
     type: text
   site:
+    type: text
+  lang:
     type: text
 responses:
   utter_greet:
@@ -122,6 +125,7 @@ responses:
   - text: من فضلك اكتب لي رقم تلفونك
 actions:
 - action_site
+- action_detect_lang
 - utter_greet
 - utter_greet_Ar
 - utter_goodbye
