@@ -25,7 +25,6 @@
 - مع السلامة
 - شكرا
 - تصبح على خير
-- شكرا
 - الله يجزاك الخير
 - كفو
 
@@ -44,6 +43,8 @@
 - هل انت من البشر
 - وش اسمك
 - ماهو اسمك
+- حيوان
+- غبي
 
 ## intent:how_are_you
 - how are you ?
@@ -79,7 +80,7 @@
 - i don't know what to say !
 - how thoughtful of you !
 - i relly want to thank you for your help
-- i couldn't have done it without you 
+- i couldn't have done it without you
 - this means a lot to me
 - i am really grateful for your help
 
@@ -108,6 +109,7 @@
 - i need a helping hand
 - could you hold that ?
 - could you give me a digout ?
+- i am fine
 
 ## intent:ask_for_help_Ar
 - احتاج مساعدتك
@@ -122,7 +124,6 @@
 - احتاج الى بعض المساعدة
 - ساعدني
 - هل يمكنني طلب خدمة ؟
-- هل يمكنني طلب معروف ؟
 - هل يمكنك مساعدتي للحظة ؟
 - هل يمكنك ان تمد لي يد المساعدة ؟
 - احتاج الى
@@ -145,6 +146,9 @@
 - what is the university [link](site) ?
 - university [link](site)
 - university [website](site)
+- i need [website](site) of university
+- i need [twitter](site) of university
+
 ## intent:university_accounts_Ar
 - ماهو [موقع](site) الجامعة
 - ماهو حساب [التويتر](site) الجامعة
@@ -204,7 +208,7 @@
 - [لا استطيع الدخول على نظام البلاكبورد](problem)
 - [لا يمكنني الدخول على نظام](problem)
 - [البلاكبورد معلق](problem)
-
+- مشكلتي هي الموقع لا يفتح
 
 ## intent:my_problems_blackboard
 - [my subjects don't appear on the balckboard](Bbproblem)
@@ -301,7 +305,8 @@
 - [00966501234650](phone)
 - [966571598765](phone)
 - [+966531698567](phone)
-##intent:your_phone_Ar
+
+## intent:your_phone_Ar
 - تلفوني هو [0596423978](phone)
 - [0556971438](phone)
 - [0536987152](phone)
@@ -309,5 +314,35 @@
 - [563978468](phone)
 - [96652030405](phone)
 
+## intent:notUnderstand
+- ugd ohg] lpl]
+- kjlds;fvnh;cmdslmcs;lncsnc
+- ndslnkmsmc
+- ml;axlpdkhi
+- kcsl;lkxamjcw
+- eejrohffheri
+- kcn;cdsnieul
+- ,x[pxkw;cwpo
+- s'cls,cm
+- lvpfh
+- ;dt hgphg
+- hkh fodv
+- la;gjd ud hgkj ghdulg
+- hg,df shdj hgh dajyg
+- hsld 
+- lk hkj
 
-
+## intent:notUnderstand_Ar:
+- سخيؤاصثمهؤاص
+- ؤتسخكؤرىمثهر
+- كيسرتؤىثقمابثقمبارىاثقمهعثتكبراثىسنسيةؤكثنةىر
+- وسشكتؤمسؤ
+- ثخصحقااليبكرىي
+- نبتكيسخرظمؤةكخيس
+- ؤركثسرسك ىي
+- اثممخ
+- اه
+- ه ىثي فخ اثمح
+- ةغ حقخﻻمثة هس فاث صثﻻسهفث يخثسىف صخقن
+- ةغ ىشةث هس
+- اخص شقث غخع

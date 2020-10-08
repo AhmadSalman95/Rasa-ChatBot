@@ -5,6 +5,10 @@ import re
 from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.forms import FormAction, REQUESTED_SLOT
 from langdetect import detect
+# this package helpful to sends emails
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+import smtplib
 
 
 # site take the site variable and return the website or twitter account
@@ -149,6 +153,25 @@ def problem_test(problem):
     return problem, massage
 
 
+def send_email(massage):
+    my_address = ''
+    password = ''
+    user_email = ''
+    # this smtp for outlook
+    # s=smtplib.SMTP(host='smtp-mail.outlook.com',port=587)
+    s = smtplib.SMTP(host='smtp.gmail.com', port=587)
+    s.starttls()
+    s.login(my_address, password)
+    msg = MIMEMultipart()
+    msg['From'] = my_address
+    msg['To'] = user_email
+    msg['Subject'] = "test chatbot"
+    msg.attach(MIMEText(massage, 'plain'))
+    s.send_message(msg)
+    del msg
+    s.quit()
+
+
 # this class to collect the information of user (name,phone,email,problem)
 # the response language detect from lang slot
 class InformationForm(FormAction):
@@ -180,9 +203,11 @@ class InformationForm(FormAction):
         phone = tracker.get_slot("phone")
         email = tracker.get_slot("email")
         problem = tracker.get_slot("problem")
-        dispatcher.utter_message(
-            text="the your information is : name: {0},phone: {1},email: {2} ,problem: {3}".format(name, phone, email,
-                                                                                                  problem))
+        massage = " name : {0}\n email : {1}\n phone : {2}\n the problem description : {3}".format(name, email, phone,
+                                                                                                   problem)
+
+        dispatcher.utter_message(text=massage)
+        send_email(massage)
 
         return []
 

@@ -32,6 +32,9 @@ intents:
 - your_email_Ar
 - your_phone
 - your_phone_Ar
+- notUnderstand
+- notUnderstand_Ar
+- 'notUnderstand_Ar:'
 entities:
 - site
 - lang
@@ -45,6 +48,8 @@ slots:
     type: text
   email:
     type: text
+  lang:
+    type: text
   name:
     type: text
   phone:
@@ -52,8 +57,6 @@ slots:
   problem:
     type: text
   site:
-    type: text
-  lang:
     type: text
 responses:
   utter_greet:
@@ -72,7 +75,7 @@ responses:
   utter_bot_challenge_Ar:
   - text: انا سطام,وانا روبوت ذكي
   utter_how_are_you:
-  - text: fine,and you?
+  - text: hi
   utter_how_are_you_Ar:
   - text: الحمد لله , وانت كيف حالك ؟
   utter_thanks:
@@ -80,7 +83,7 @@ responses:
   utter_thanks_Ar:
   - text: عفوا, هذا واجبي.
   utter_ask_problem:
-  - text: please tell me what's yor problem
+  - text: please tell me what's your problem
   utter_ask_problem_Ar:
   - text: تفضل,اخبرني ماهي مشكلتك
   - text: بالتأكيد
@@ -91,7 +94,7 @@ responses:
   utter_university_accounts:
   - text: 'the university {site} is '
   utter_university_accounts_Ar:
-  - text: 'الجامعة {site} هو :'
+  - text: ' {site}الجامعة هو :'
   utter_my_problems_technical:
   - text: you can connect with it support by use ithelp.psau.edu.sa/n or 0115882000
   utter_my_problems_technical_Ar:
@@ -123,6 +126,10 @@ responses:
   - text: please tell me what's your phone
   utter_ask_phone_Ar:
   - text: من فضلك اكتب لي رقم تلفونك
+  utter_notUnderstand:
+  - text: i don't understand , can you repeat?
+  utter_notUnderstand_Ar:
+  - text: لا استطيع ان افهمك , ممكن ان تعيد ؟
 actions:
 - action_site
 - action_detect_lang
@@ -156,15 +163,7 @@ actions:
 - utter_ask_email_Ar
 - utter_ask_phone
 - utter_ask_phone_Ar
+- utter_notUnderstand
+- utter_notUnderstand_Ar
 forms:
 - information_form
-
-template:
-- utter_ask_name
-- utter_ask_name_Ar
-- utter_ask_email
-- utter_ask_email_Ar
-- utter_ask_phone
-- utter_ask_phone_Ar
-- utter_ask_problem
-- utter_ask_problem_Ar
