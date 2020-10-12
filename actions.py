@@ -207,7 +207,7 @@ class InformationForm(FormAction):
                                                                                                    problem)
 
         dispatcher.utter_message(text=massage)
-        send_email(massage)
+        # send_email(massage)
 
         return []
 

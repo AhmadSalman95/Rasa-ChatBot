@@ -14,13 +14,13 @@ pipeline:
     min_ngram: 1
     max_ngram: 4
   - name: DIETClassifier
-    epochs: 100
+    epochs: 200
     batch_strategy: sequence
     entity_recognition: False
 #  - name=EmbeddingIntentClassifier     #same the DIETClassifier just in the old version
 #  - name: EntitySynonymMapper
   - name: ResponseSelector
-    epochs: 100
+    epochs: 200
 ##############################################################################################
 # arabic rasa
 
