@@ -6,6 +6,10 @@
 - good evening
 - hey there
 
+## intent:start_massage
+- the session is starting
+- /start
+
 ## intent:greet_Ar
 - السلام عليكم
 - السلام عليكم ورحمة الله وبركاته

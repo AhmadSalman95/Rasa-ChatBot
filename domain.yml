@@ -34,7 +34,9 @@ intents:
 - your_phone_Ar
 - notUnderstand
 - notUnderstand_Ar
-- 'notUnderstand_Ar:'
+- restart
+- back
+- start_massage
 entities:
 - site
 - lang
@@ -62,7 +64,7 @@ responses:
   utter_greet:
   - text: Hey! How are you?
   utter_greet_Ar:
-  - text: 'هلا وغلا,تفضل كيف يمكنني ان اخدمك '
+  - text: هلا وغلا,تفضل كيف يمكنني ان اخدمك
   utter_goodbye:
   - text: goodbye,see you later
   - text: goodbye
@@ -77,11 +79,11 @@ responses:
   utter_how_are_you:
   - text: hi
   utter_how_are_you_Ar:
-  - text: الحمد لله , وانت كيف حالك ؟
+  - text: الحمد لله
   utter_thanks:
   - text: you are welcome
   utter_thanks_Ar:
-  - text: عفوا, هذا واجبي.
+  - text: عفوا, هذا واجبي
   utter_ask_problem:
   - text: please tell me what's your problem
   utter_ask_problem_Ar:
@@ -92,7 +94,7 @@ responses:
   utter_bot_history_Ar:
   - text: بدا المطورون يطوروني منذ عام 2019
   utter_university_accounts:
-  - text: 'the university {site} is '
+  - text: the university {site} is
   utter_university_accounts_Ar:
   - text: ' {site}الجامعة هو :'
   utter_my_problems_technical:
@@ -115,7 +117,7 @@ responses:
   utter_jobs_information_Ar:
   - text: 'يمكنك زيارة الموقع : jobs.psau.edu.sa'
   utter_ask_name:
-  - text: whats your name
+  - text: what's your name
   utter_ask_name_Ar:
   - text: الرجاء كتابة اسمك الثلاثي
   utter_ask_email:
@@ -130,9 +132,12 @@ responses:
   - text: i don't understand , can you repeat?
   utter_notUnderstand_Ar:
   - text: لا استطيع ان افهمك , ممكن ان تعيد ؟
+  utter_restart:
+  - text: the session restarted
 actions:
 - action_site
 - action_detect_lang
+- action_start_massage
 - utter_greet
 - utter_greet_Ar
 - utter_goodbye
@@ -165,5 +170,6 @@ actions:
 - utter_ask_phone_Ar
 - utter_notUnderstand
 - utter_notUnderstand_Ar
+- utter_restart
 forms:
 - information_form

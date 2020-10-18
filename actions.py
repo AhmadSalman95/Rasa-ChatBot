@@ -1,8 +1,10 @@
 from typing import Any, Text, Dict, List, Optional
+
+from rasa.core.events import Event
 from rasa_sdk import Action, Tracker, ActionExecutionRejection
 from rasa_sdk.executor import CollectingDispatcher
 import re
-from rasa_sdk.events import SlotSet, EventType
+from rasa_sdk.events import SlotSet, EventType, SessionStarted, ActionExecuted
 from rasa_sdk.forms import FormAction, REQUESTED_SLOT
 from langdetect import detect
 # this package helpful to sends emails
@@ -279,3 +281,56 @@ class InformationForm(FormAction):
 
                 return [SlotSet(REQUESTED_SLOT, slot)]
         return None
+
+
+class ActionSessionmassage(Action):
+    def name(self) -> Text:
+        return "action_start_massage"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        massage1 = "the session started,please begin the conversation"
+        massage2 = "دردشة قد بدءت ,الرجاء ابدء بمناقشة."
+        massage= "{}.\n\n{}".format(massage1,massage2)
+        dispatcher.utter_message(text=massage1)
+        dispatcher.utter_message(text=massage2)
+        return []
+
+
+# class ActionSessionStart(Action):
+#     def name(self) -> Text:
+#         return "action_session_start"
+#
+#     @staticmethod
+#     def fetch_slots(tracker: Tracker) -> List[EventType]:
+#         """Collect slots that contain the user's name and phone number."""
+
+    #     slots = []
+    #
+    #     for key in ("name", "phone_number"):
+    #         value = tracker.get_slot(key)
+    #         if value is not None:
+    #             slots.append(SlotSet(key=key, value=value))
+    #
+    #     return slots
+
+    # async def run(self,
+    #               output_channel: "OutputChannel",
+    #               nlg: "NaturalLanguageGenerator",
+    #               tracker: "DialogueStateTracker",
+    #               domain: "Domain"
+    #               ) -> List[Event]:
+
+    #     the session should begin with a `session_started` event
+        # events = [SessionStarted(metadata=self.metadata)]
+        #
+        # any slots that should be carried over should come after the
+        # `session_started` event
+        # events.extend(self.fetch_slots(tracker))
+        # events.append(ActionExecuted("action_session_massage"))
+
+        # an `action_listen` should be added at the end as a user message follows
+        # events.append(ActionExecuted("action_listen"))
+        #
+        # return events

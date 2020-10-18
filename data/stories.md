@@ -1,4 +1,6 @@
 ## university_Site path
+* start_massage
+  - action_start_massage
 * greet
   - action_detect_lang
   - utter_greet
@@ -17,12 +19,15 @@
   - utter_thanks 
 * goodbye
   - utter_goodbye
+  - action_restart
 
   
 ## university_Site_Ar path
+* start_massage
+  - action_start_massage
 * greet_Ar
- - action_detect_lang
- - utter_greet_Ar
+  - action_detect_lang
+  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar
 * bot_challenge_Ar
@@ -37,10 +42,13 @@
 * thanks_Ar
   - utter_thanks_Ar
 * goodbye_Ar
- - utter_goodbye_Ar
+  - utter_goodbye_Ar
+  - action_restart
 
 
 ## problem_Technical path
+* start_massage
+  - action_start_massage
 * greet
   - action_detect_lang
   - utter_greet
@@ -61,13 +69,16 @@
   - utter_thanks 
 * goodbye
   - utter_goodbye
+  - action_restart
 
 
   
 ## problem_Technical_Ar path
+* start_massage
+  - action_start_massage
 * greet_Ar
- - action_detect_lang
- - utter_greet_Ar
+  - action_detect_lang
+  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar
 * bot_challenge_Ar
@@ -84,11 +95,14 @@
 * notUnderstand_Ar
   - utter_notUnderstand_Ar
 * goodbye_Ar
- - utter_goodbye_Ar
+  - utter_goodbye_Ar
+  - action_restart
 
 
 
 ## problem_Blackboard path
+* start_massage
+  - action_start_massage
 * greet
   - action_detect_lang
   - utter_greet
@@ -106,13 +120,16 @@
   - utter_thanks 
 * goodbye
   - utter_goodbye
+  - action_restart
 
 
   
 ## problem_Blackboard_Ar path
+* start_massage
+  - action_start_massage
 * greet_Ar
- - action_detect_lang 
- - utter_greet_Ar
+  - action_detect_lang 
+  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar
 * bot_challenge_Ar
@@ -124,13 +141,17 @@
 * thanks_Ar
   - utter_thanks_Ar
 * goodbye_Ar
- - utter_goodbye_Ar
+  - utter_goodbye_Ar
+  - action_restart
 * notUnderstand_Ar
   - utter_notUnderstand_Ar
+  
 
 
 
 ## problem_ITdl path
+* start_massage
+  - action_start_massage
 * greet
   - action_detect_lang
   - utter_greet
@@ -148,15 +169,18 @@
   - utter_thanks 
 * goodbye
   - utter_goodbye
+  - action_restart
 
 
   
 ## problem_ITdl_Ar path
+* start_massage
+  - action_start_massage
 * notUnderstand_Ar
   - utter_notUnderstand_Ar
 * greet_Ar
- - action_detect_lang
- - utter_greet_Ar
+  - action_detect_lang
+  - utter_greet_Ar
 * how_are_you_Ar
   - utter_how_are_you_Ar
 * bot_challenge_Ar
@@ -168,11 +192,14 @@
 * thanks_Ar
   - utter_thanks_Ar
 * goodbye_Ar
- - utter_goodbye_Ar
+  - utter_goodbye_Ar
+  - action_restart
 
 
  
 ## job path
+* start_massage
+  - action_start_massage
 * greet
   - action_detect_lang
   - utter_greet
@@ -190,12 +217,15 @@
   - utter_thanks 
 * goodbye
   - utter_goodbye
+  - action_restart
 
   
-## job_Ar path
+## job_Ar path.
+* start_massage
+  - action_start_massage
 * greet_Ar
- - action_detect_lang
- - utter_greet_Ar
+  - action_detect_lang
+  - utter_greet_Ar
 * notUnderstand_Ar
   - utter_notUnderstand_Ar
 * how_are_you_Ar
@@ -209,7 +239,8 @@
 * thanks_Ar
   - utter_thanks_Ar
 * goodbye_Ar
- - utter_goodbye_Ar
+  - utter_goodbye_Ar
+  - action_restart
 
 
  
@@ -224,4 +255,9 @@
  - information_form
  - form{"name":"information_form"}
  - form{"name":null}
+ 
+## start path
+* start_massage
+ - action_start_massage
+ 
  
